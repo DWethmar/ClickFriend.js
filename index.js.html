@@ -25,13 +25,10 @@
 		
 		.clickFriend-animation{
 			display: inline-block;
-			border-bottom: 4px solid white;
 			border: 2px solid black;
-			border-radius: 50%
-			
-			margin: 50px;
-			width: 0px;
-			height: 0px;
+			border-radius: 50%;
+			width: 1px;
+			height: 1px;
 		}
 		
     </style>
@@ -44,25 +41,33 @@
 			});
 			
 			function onClick(x, y){
+				
+				var diameter = 100;
+			
 				var dx, dy;
-				dx = x - 50;
-				dy = y - 50;
+				dx = x - (diameter / 2);
+				dy = y - (diameter / 2);
 				var containerId = "" + dx + "-" + dy;
 				
 				var containerElement = $('<div>').attr({'id': containerId, class: 'clickfriend-container'});
-				var animationElement = $('<div>').attr({class: 'clickfriend-animation'});
-				
-				animationElement.animate({
-				margin: "0px",
-				//width: "100px",
-				//height: "100px",
-				//opacity: 0
-				}, 1000, function() {
-					$(this).remove();
-				});
+				var animationElement = $('<div>')
+					.attr({class: 'clickfriend-animation'})
+					.css({margin: (diameter / 2) - 1});
 				
 				containerElement.css({left: dx, top: dy}).append(animationElement);
 				$('body').append(containerElement);
+				
+				animationElement.animate({
+					margin: "0px",
+					width: diameter,
+					height: diameter,
+					margin: 0,
+					opacity: 0
+				}, 800, function() {
+					$(this).parent().remove();
+				});
+				
+
 			}
 			
 		</script>
