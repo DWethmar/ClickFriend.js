@@ -33,8 +33,8 @@
 		
     </style>
     <body>
+	
 		<script>
-			
 			$('body').on('click', function(e){
 				var offset = $(this).offset();
 				onClick(e.clientX - offset.left, e.clientY - offset.top);
@@ -43,7 +43,7 @@
 			function onClick(x, y){
 				
 				var diameter = 100;
-			
+				
 				var dx, dy;
 				dx = x - (diameter / 2);
 				dy = y - (diameter / 2);
@@ -66,10 +66,7 @@
 				}, 200, function() {
 					$(this).parent().remove();
 				});
-				
-
 			}
-			
 		</script>
     </body>
 </html>
