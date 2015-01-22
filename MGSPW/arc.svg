@@ -6,7 +6,6 @@
 	//http://stackoverflow.com/a/3262746/1134416
 	
 	function init(){
-		
 		//Remove polka background
 		setTimeout(function(){
 				document.getElementById("polka-background").style.display = 'none';
@@ -60,12 +59,7 @@
 			} 
 		, .15)
 	}
-	/*
-	TEKST
-	Polka background
-	Number
-	Arc
-	*/
+
 	]]></script> 
 	<defs>
 		<style type="text/css">
@@ -75,6 +69,13 @@
 				font-family: AddWBitmap09;
 				src: url('ADDWB___.TTF');
 			}
+			#text, #value{
+				font-size: 20px;
+				font-family: 'AddWBitmap09'; 
+				font-weight:bolder; font-style: normal; font-size: 12px; 
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
+			}
+			
 		   ]]>
 		 </style>
 		<pattern id="polka" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
@@ -85,6 +86,6 @@
 	<circle id="polka-background" cx="65" cy="50" r="25" stroke="black" stroke-width="0" fill="url(#polka)" />
 	
 	<path id="arc-animation" d="M50,50" fill="none" stroke="blue" stroke-width="3" />
-	<text id="text" x="5" y="50" fill="white" style="font-family: 'AddWBitmap09'; font-weight:bolder; font-style: normal; font-size: 12px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">STN</text>
-	<text id="value" x="50" y="50" fill="white" style="font-family: 'AddWBitmap09'; font-weight:bolder; font-style: normal; font-size: 12px; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">2000</text>
+	<text id="text" x="5" y="50" fill="white" style="">STN</text>
+	<text id="value" x="50" y="50" fill="white" style="">2000</text>
 </svg>
