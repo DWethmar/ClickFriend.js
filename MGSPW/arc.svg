@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="100" width="115" style="" onload="init();"> 
   <script type="text/javascript"> <![CDATA[
 	//http://stackoverflow.com/a/3262746/1134416
 	
 	function init(){
+		
+		//Random value pos
+		var value = document.getElementById("value");
+		var valueX = parseInt(value.getAttribute("x"));
+		var valueY = parseInt(value.getAttribute("y"));
+		
+		valueX = valueX + Math.floor((Math.random() * 20) + -10);
+		valueY = valueY + Math.floor((Math.random() * 20) + -10);
+		value.setAttribute("x", valueX);
+		value.setAttribute("y", valueY);
+		
 		//Remove polka background
 		setTimeout(function(){
 				document.getElementById("polka-background").style.display = 'none';
@@ -35,11 +45,11 @@
 	function drawCircle() {
 		var i = 0;
 		var circle = document.getElementById("arc-animation");
-		var angle = -105; 
+		var angle = -100; 
 		var radius = 47;  //50 - border radius   
 		window.timer = window.setInterval(
 			function() {
-				angle -=5; 
+				angle -= 10; 
 				angle %= 360;
 				var radians= (angle/180) * Math.PI;
 				var y = 50 + Math.cos(radians) * radius;
@@ -57,7 +67,7 @@
 				circle.setAttribute("d", d);
 				i++;
 			} 
-		, .15)
+		, 5)
 	}
 
 	]]></script> 
